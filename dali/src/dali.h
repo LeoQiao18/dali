@@ -7,8 +7,8 @@
 #ifndef DALI_DALI_H
 #define DALI_DALI_H
 
-#include "Dali/Application.h"
+#include "dali/application.h"
 
-#include "Dali/Entrypoint.h"
+#include "dali/entrypoint.h"
 
 #endif //DALI_DALI_H

@@ -5,11 +5,11 @@
 #ifndef DALI_ENTRYPOINT_H
 #define DALI_ENTRYPOINT_H
 
-extern Dali::Application* Dali::CreateApplication();
+extern dali::Application* dali::create_application();
 
 int main(int argc, char **argv) {
-    auto app = Dali::CreateApplication();
-    app->Run();
+    auto app = dali::create_application();
+    app->run();
     delete app;
 }
 

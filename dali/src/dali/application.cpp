@@ -2,9 +2,9 @@
 // Created by Leo on 4/23/2020.
 //
 
-#include "Application.h"
+#include "application.h"
 
-namespace Dali {
+namespace dali {
 
     Application::Application() {
 
@@ -14,7 +14,7 @@ namespace Dali {
 
     }
 
-    void Application::Run() {
+    void Application::run() {
         while (true);
     }
 

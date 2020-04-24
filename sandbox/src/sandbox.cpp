@@ -3,7 +3,7 @@
 //
 #include <Dali.h>
 
-class Sandbox : public Dali::Application {
+class Sandbox : public dali::Application {
 public:
     Sandbox() {
 
@@ -14,6 +14,6 @@ public:
     }
 };
 
-Dali::Application *Dali::CreateApplication() {
+dali::Application *dali::create_application() {
     return new Sandbox();
 }

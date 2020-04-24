@@ -5,21 +5,21 @@
 #ifndef DALI_APPLICATION_H
 #define DALI_APPLICATION_H
 
-#include "Core.h"
+#include "core.h"
 #include <iostream>
 
-namespace Dali {
+namespace dali {
 
     class DALI_API Application {
     public:
         Application();
         virtual ~Application();
 
-        void Run();
+        void run();
     };
 
     // This function should be defined in client application
-    Application* CreateApplication();
+    Application* create_application();
 
 }
 
