@@ -8,7 +8,6 @@
 extern Dali::Application* Dali::CreateApplication();
 
 int main(int argc, char **argv) {
-    std::cout << "main function called" << std::endl;
     auto app = Dali::CreateApplication();
     app->Run();
     delete app;

@@ -1,0 +1,3 @@
+[submodule "dali/vendor/spdlog"]
+	path = dali/vendor/spdlog
+	url = git@github.com:gabime/spdlog.git

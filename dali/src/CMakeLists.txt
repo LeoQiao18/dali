@@ -7,6 +7,7 @@ add_library(dali SHARED
         dali.h
         dali/core.h
         dali/application.h dali/application.cpp)
+target_link_libraries(dali PUBLIC spdlog::spdlog)
 #include(GenerateExportHeader)
 #GENERATE_EXPORT_HEADER(dali
 #        BASE_NAME dali
