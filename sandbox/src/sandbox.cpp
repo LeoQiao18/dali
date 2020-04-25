@@ -1,7 +1,8 @@
 //
 // Created by Leo on 4/23/2020.
 //
-#include <Dali.h>
+#include <dali.h>
+#include <dali/entrypoint.h>
 
 class Sandbox : public dali::Application {
 public:
