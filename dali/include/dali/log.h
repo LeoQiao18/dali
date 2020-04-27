@@ -5,7 +5,7 @@
 #ifndef DALI_LOG_H
 #define DALI_LOG_H
 
-#include "core.h"
+#include <dali/core.h>
 
 #include <spdlog/spdlog.h>
 
@@ -14,10 +14,11 @@ namespace dali {
     public:
         static void init();
 
-        inline static std::shared_ptr<spdlog::logger>& get_core_logger() {
+        inline static std::shared_ptr<spdlog::logger> &get_core_logger() {
             return s_core_logger;
         }
-        inline static std::shared_ptr<spdlog::logger>& get_client_logger() {
+
+        inline static std::shared_ptr<spdlog::logger> &get_client_logger() {
             return s_client_logger;
         }
 
