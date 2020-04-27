@@ -1,10 +1,10 @@
 //
 // Created by Leo on 4/23/2020.
 //
-#include <dali.h>
+#include <dali/dali.h>
 #include <dali/entrypoint.h>
 
-class Sandbox : public dali::Application {
+class Sandbox : public dali::App {
 public:
     Sandbox() {
 
@@ -15,6 +15,6 @@ public:
     }
 };
 
-dali::Application *dali::create_application() {
+dali::App *dali::create_app() {
     return new Sandbox();
 }

@@ -2,7 +2,8 @@
 // Created by Leo on 4/24/2020.
 //
 
-#include "log.h"
+#include <dali/log.h>
+
 #include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace dali {

@@ -5,12 +5,13 @@
 #ifndef DALI_ENTRYPOINT_H
 #define DALI_ENTRYPOINT_H
 
-#include <dali/application.h>
+#include <dali/app.h>
 
 int main(int argc, char **argv) {
     dali::Log::init();
 
-    auto app = dali::create_application();
+    auto app = dali::create_app();
+    DALI_CORE_INFO("App created\n");
     app->run();
     delete app;
 }

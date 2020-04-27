@@ -7,7 +7,8 @@
 #ifndef DALI_DALI_H
 #define DALI_DALI_H
 
-#include <dali/application.h>
+#include <dali/app.h>
 #include <dali/log.h>
+#include <dali/event.h>
 
 #endif //DALI_DALI_H

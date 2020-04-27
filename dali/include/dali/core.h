@@ -19,4 +19,7 @@
 #error Dali only supports Windows.
 #endif //DALI_PLATFORM_WINDOWS
 
+/* helpers */
+#define BIT(pos) (1 << pos)
+
 #endif //DALI_CORE_H
