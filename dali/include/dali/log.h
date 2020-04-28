@@ -8,6 +8,7 @@
 #include <dali/core.h>
 
 #include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
 
 namespace dali {
     class DALI_API Log {
@@ -30,17 +31,17 @@ namespace dali {
 }
 
 // Core logging macros
-#define DALI_CORE_TRACE(...) dali::Log::get_core_logger()->trace(__VA_ARGS__)
-#define DALI_CORE_INFO(...) dali::Log::get_core_logger()->info(__VA_ARGS__)
-#define DALI_CORE_WARN(...) dali::Log::get_core_logger()->warn(__VA_ARGS__)
-#define DALI_CORE_ERROR(...) dali::Log::get_core_logger()->error(__VA_ARGS__)
-#define DALI_CORE_FATAL(...) dali::Log::get_core_logger()->fatal(__VA_ARGS__)
+#define DALI_CORE_TRACE(...) ::dali::Log::get_core_logger()->trace(__VA_ARGS__)
+#define DALI_CORE_INFO(...) ::dali::Log::get_core_logger()->info(__VA_ARGS__)
+#define DALI_CORE_WARN(...) ::dali::Log::get_core_logger()->warn(__VA_ARGS__)
+#define DALI_CORE_ERROR(...) ::dali::Log::get_core_logger()->error(__VA_ARGS__)
+#define DALI_CORE_CRITICAL(...) ::dali::Log::get_core_logger()->critical(__VA_ARGS__)
 
 // Client logging macros
-#define DALI_CLIENT_TRACE(...) dali::Log::get_client_logger()->trace(__VA_ARGS__)
-#define DALI_CLIENT_INFO(...) dali::Log::get_client_logger()->info(__VA_ARGS__)
-#define DALI_CLIENT_WARN(...) dali::Log::get_client_logger()->warn(__VA_ARGS__)
-#define DALI_CLIENT_ERROR(...) dali::Log::get_client_logger()->error(__VA_ARGS__)
-#define DALI_CLIENT_FATAL(...) dali::Log::get_client_logger()->fatal(__VA_ARGS__)
+#define DALI_TRACE(...) ::dali::Log::get_client_logger()->trace(__VA_ARGS__)
+#define DALI_INFO(...) ::dali::Log::get_client_logger()->info(__VA_ARGS__)
+#define DALI_WARN(...) ::dali::Log::get_client_logger()->warn(__VA_ARGS__)
+#define DALI_ERROR(...) ::dali::Log::get_client_logger()->error(__VA_ARGS__)
+#define DALI_CRITICAL(...) ::dali::Log::get_client_logger()->critical(__VA_ARGS__)
 
 #endif //DALI_LOG_H
