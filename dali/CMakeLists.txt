@@ -3,8 +3,19 @@ project(dali)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# ========== Vendor ==========
+# ----- GLFW -----
+# not building docs, tests and examples
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
+add_subdirectory(vendor/glfw)
+
+# ----- spdlog -----
 add_subdirectory(vendor/spdlog)
 
+# ========== Dali ==========
 add_library(dali SHARED
         include/dali/app.h
         include/dali/core.h
@@ -19,7 +30,9 @@ add_library(dali SHARED
         include/dali/event/key.h
         include/dali/event/mouse.h)
 
-target_link_libraries(dali PUBLIC spdlog::spdlog)
+target_link_libraries(dali PUBLIC
+        spdlog::spdlog
+        glfw)
 #include(GenerateExportHeader)
 #GENERATE_EXPORT_HEADER(dali
 #        BASE_NAME dali

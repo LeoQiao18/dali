@@ -1,3 +1,6 @@
 [submodule "dali/vendor/spdlog"]
 	path = dali/vendor/spdlog
 	url = git@github.com:gabime/spdlog.git
+[submodule "dali\\vendor\\glfw"]
+	path = dali\\vendor\\glfw
+	url = git@github.com:glfw/glfw.git
