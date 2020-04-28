@@ -16,7 +16,8 @@ add_library(dali SHARED
         include/dali/log.h
         src/app.cpp
         src/log.cpp
-        include/dali/event/key.h)
+        include/dali/event/key.h
+        include/dali/event/mouse.h)
 
 target_link_libraries(dali PUBLIC spdlog::spdlog)
 #include(GenerateExportHeader)

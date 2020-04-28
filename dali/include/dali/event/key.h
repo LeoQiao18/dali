@@ -20,7 +20,7 @@ namespace dali {
             return m_key_code;
         }
 
-        EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput);
+        EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
     protected:
         KeyEvent(int key_code)
@@ -49,7 +49,7 @@ namespace dali {
             return ss.str();
         }
 
-        EVENT_CLASS_TYPE(KeyPressed);
+        EVENT_CLASS_TYPE(KeyPressed)
 
     private:
         int m_nrepeat;
@@ -67,13 +67,13 @@ namespace dali {
             return ss.str();
         }
 
-        EVENT_CLASS_TYPE(KeyReleased);
+        EVENT_CLASS_TYPE(KeyReleased)
     };
 
     class KeyTypedEvent : public KeyEvent {
     public:
         KeyTypedEvent(int key_code)
-                : KeyEvent(key_code){
+                : KeyEvent(key_code) {
         }
 
         std::string to_string() const override {
@@ -82,7 +82,7 @@ namespace dali {
             return ss.str();
         }
 
-        EVENT_CLASS_TYPE(KeyTyped);
+        EVENT_CLASS_TYPE(KeyTyped)
     };
 }
 
