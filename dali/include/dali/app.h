@@ -6,7 +6,8 @@
 #define DALI_APP_H
 
 #include <dali/core.h>
-#include <iostream>
+#include <dali/common.h>
+#include <dali/window.h>
 
 namespace dali {
 
@@ -17,6 +18,10 @@ namespace dali {
         virtual ~App();
 
         void run();
+
+    private:
+        std::unique_ptr<Window> m_window;
+        bool m_running = true;
     };
 
     // This function should be defined in client application

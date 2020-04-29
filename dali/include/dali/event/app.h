@@ -5,7 +5,7 @@
 #ifndef DALI_EVENT_APP_H
 #define DALI_EVENT_APP_H
 
-#include <dali/event/common.h>
+#include <dali/event/core.h>
 
 #include <sstream>
 

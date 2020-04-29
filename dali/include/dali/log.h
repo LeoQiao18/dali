@@ -6,6 +6,7 @@
 #define DALI_LOG_H
 
 #include <dali/core.h>
+#include <dali/common.h>
 
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>

@@ -8,7 +8,8 @@
 #define DALI_DALI_H
 
 #include <dali/app.h>
-#include <dali/log.h>
 #include <dali/event.h>
+#include <dali/log.h>
+#include <dali/window.h>
 
 #endif //DALI_DALI_H

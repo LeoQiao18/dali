@@ -5,7 +5,7 @@
 #ifndef DALI_KEY_H
 #define DALI_KEY_H
 
-#include <dali/event/common.h>
+#include <dali/event/core.h>
 
 #include <sstream>
 
