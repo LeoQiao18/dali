@@ -28,7 +28,7 @@ namespace dali {
         }
 
         virtual void set_event_callback(const EventCallbackFn &callback) override {
-            m_data.callback = callback;
+            m_data.event_callback = callback;
         }
 
         virtual void set_vsync(bool enabled) override;
@@ -49,7 +49,7 @@ namespace dali {
             unsigned int height;
             bool vsync;
 
-            EventCallbackFn callback;
+            EventCallbackFn event_callback;
         };
 
         WindowData m_data;

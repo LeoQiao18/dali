@@ -8,6 +8,8 @@
 #include <dali/core.h>
 #include <dali/common.h>
 #include <dali/window.h>
+#include <dali/event.h>
+#include <dali/layer.h>
 
 namespace dali {
 
@@ -19,8 +21,17 @@ namespace dali {
 
         void run();
 
+        void on_event(Event &e);
+
+        bool on_window_close(WindowCloseEvent &e);
+
+        void push_layer(Layer *layer);
+
+        void push_overlay(Layer *layer);
+
     private:
         std::unique_ptr<Window> m_window;
+        LayerStack m_layer_stack;
         bool m_running = true;
     };
 

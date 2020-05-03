@@ -15,7 +15,7 @@ namespace dali {
         unsigned int width;
         unsigned int height;
 
-        explicit WindowProps(const std::string &p_title = "Hazel Engine",
+        explicit WindowProps(const std::string &p_title = "Dali",
                              unsigned int p_width = 1280,
                              unsigned int p_height = 720)
                 : title(p_title), width(p_width), height(p_height) {

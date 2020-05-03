@@ -7,6 +7,8 @@
 
 #include <dali/event/core.h>
 #include <dali/event/app.h>
+#include <dali/event/key.h>
+#include <dali/event/mouse.h>
 
 #include <functional>
 

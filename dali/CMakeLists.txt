@@ -4,7 +4,10 @@ project(dali)
 set(CMAKE_CXX_STANDARD 17)
 
 # ==================== Vendor ====================
-# --------------- GLFW ---------------
+# --------------- glad ---------------
+add_subdirectory(vendor/glad)
+
+# --------------- glfw ---------------
 # not building docs, tests and examples
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -15,8 +18,6 @@ add_subdirectory(vendor/glfw)
 # --------------- spdlog ---------------
 add_subdirectory(vendor/spdlog)
 
-# --------------- opengl ---------------
-find_package(OpenGL REQUIRED)
 
 # ==================== Dali ====================
 add_library(dali SHARED
@@ -35,12 +36,12 @@ add_library(dali SHARED
         src/core/app.cpp
         src/core/log.cpp
         src/platform/windows/window.cpp
-        src/platform/windows/window.h src/core/window.cpp)
+        src/platform/windows/window.h src/core/window.cpp include/dali/layer.h src/core/layer.cpp)
 
 target_link_libraries(dali PUBLIC
-        spdlog::spdlog
+        glad
         glfw
-        OpenGL::GL)
+        spdlog::spdlog)
 
 target_include_directories(dali PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
