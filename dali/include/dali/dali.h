@@ -7,8 +7,10 @@
 #ifndef DALI_DALI_H
 #define DALI_DALI_H
 
-#include <dali/app.h>
 #include <dali/log.h>
+#include <dali/app.h>
 #include <dali/event.h>
+#include <dali/window.h>
+#include <dali/layer.h>
 
 #endif //DALI_DALI_H

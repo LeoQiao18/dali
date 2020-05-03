@@ -5,7 +5,7 @@
 #ifndef DALI_MOUSE_H
 #define DALI_MOUSE_H
 
-#include <dali/event/common.h>
+#include <dali/event/core.h>
 
 #include <sstream>
 

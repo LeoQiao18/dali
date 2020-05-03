@@ -5,8 +5,10 @@
 #ifndef DALI_EVENT_H
 #define DALI_EVENT_H
 
-#include <dali/event/common.h>
+#include <dali/event/core.h>
 #include <dali/event/app.h>
+#include <dali/event/key.h>
+#include <dali/event/mouse.h>
 
 #include <functional>
 

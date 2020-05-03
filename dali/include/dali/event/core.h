@@ -4,8 +4,8 @@
 // This is a blocking event system.
 //
 
-#ifndef DALI_EVENT_COMMON_H
-#define DALI_EVENT_COMMON_H
+#ifndef DALI_EVENT_CORE_H
+#define DALI_EVENT_CORE_H
 
 #include <dali/core.h>
 
@@ -44,6 +44,8 @@ namespace dali {
         friend class EventDispatcher;
 
     public:
+        bool m_handled = false;
+
         virtual EventType get_type() const = 0;
 
         virtual const char *get_name() const = 0;
@@ -57,9 +59,6 @@ namespace dali {
         inline bool is_in_category(EventCategory category) {
             return get_categories() & category;
         }
-
-    protected:
-        bool m_handled = false;
     };
 
     /*
@@ -80,4 +79,4 @@ namespace dali {
 
 }
 
-#endif //DALI_EVENT_COMMON_H
+#endif //DALI_EVENT_CORE_H

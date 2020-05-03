@@ -6,6 +6,7 @@
 #define DALI_ENTRYPOINT_H
 
 #include <dali/app.h>
+#include <dali/common.h>
 
 int main(int argc, char **argv) {
     // Dali initializations
