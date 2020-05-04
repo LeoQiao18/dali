@@ -6,7 +6,7 @@
 #include <dali/common.h>
 #include <dali/event.h>
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace dali {
 

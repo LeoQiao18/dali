@@ -8,6 +8,8 @@
 #include <dali/core.h>
 #include <dali/event.h>
 
+#include <glad/glad.h>
+
 namespace dali {
 
     static bool s_glfw_initialized = false;
@@ -63,6 +65,8 @@ namespace dali {
 
         m_window = glfwCreateWindow(props.width, props.height, m_data.title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
+        int status = gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+        DALI_CORE_ASSERT(status, "Failed to initialize");
         glfwSetWindowUserPointer(m_window, &m_data);
         set_vsync(true);
 
