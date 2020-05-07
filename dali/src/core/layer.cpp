@@ -28,10 +28,12 @@ namespace dali {
     void LayerStack::push_layer(Layer *layer) {
         m_layers.emplace(m_layers.begin() + m_layer_insert_index, layer);
         m_layer_insert_index++;
+        layer->on_attach();
     }
 
     void LayerStack::push_overlay(Layer *layer) {
         m_layers.emplace_back(layer);
+        layer->on_attach();
     }
 
     void LayerStack::pop_layer(Layer *layer) {

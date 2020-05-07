@@ -2,11 +2,13 @@
 // Created by Leo on 4/28/2020.
 //
 
-#include "window.h"
+#include <dali/platform/windows/window.h>
 
 #include <dali/common.h>
 #include <dali/core.h>
 #include <dali/event.h>
+
+#include <glad/glad.h>
 
 namespace dali {
 
@@ -63,6 +65,8 @@ namespace dali {
 
         m_window = glfwCreateWindow(props.width, props.height, m_data.title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_window);
+        int status = gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+        DALI_CORE_ASSERT(status, "Failed to initialize");
         glfwSetWindowUserPointer(m_window, &m_data);
         set_vsync(true);
 
