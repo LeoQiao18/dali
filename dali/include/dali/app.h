@@ -29,10 +29,21 @@ namespace dali {
 
         void push_overlay(Layer *layer);
 
+        inline Window &get_window() {
+            return *m_window;
+        }
+
+        inline static App &get() {
+            return *s_instance;
+        }
+
     private:
         std::unique_ptr<Window> m_window;
         LayerStack m_layer_stack;
         bool m_running = true;
+
+    private:
+        static App *s_instance;
     };
 
     // This function should be defined in client application

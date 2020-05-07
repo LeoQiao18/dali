@@ -10,7 +10,12 @@
 
 namespace dali {
 
+    App *App::s_instance = nullptr;
+
     App::App() {
+        DALI_CORE_ASSERT(!s_instance, "App already exists!");
+        s_instance = this;
+
         m_window = std::unique_ptr<Window>(Window::create());
         m_window->set_event_callback(std::bind(&App::on_event, this, std::placeholders::_1));
     }

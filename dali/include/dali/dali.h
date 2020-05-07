@@ -13,4 +13,6 @@
 #include <dali/window.h>
 #include <dali/layer.h>
 
+#include <dali/imgui/layer.h>
+
 #endif //DALI_DALI_H

@@ -23,6 +23,7 @@ class Sandbox : public dali::App {
 public:
     Sandbox() {
         push_layer(new ExampleLayer());
+        push_overlay(new dali::ImGuiLayer());
     }
 
     ~Sandbox() {

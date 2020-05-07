@@ -3,6 +3,10 @@ project(dali)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
+set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
+set(VENDOR_DIR    "${CMAKE_CURRENT_SOURCE_DIR}/vendor")
+
 # ==================== Dali ====================
 add_library(dali SHARED
         include/dali/app.h
@@ -20,7 +24,14 @@ add_library(dali SHARED
         src/core/app.cpp
         src/core/log.cpp
         src/platform/windows/window.cpp
-        src/platform/windows/window.h src/core/window.cpp include/dali/layer.h src/core/layer.cpp)
+        include/dali/platform/windows/window.h
+        src/core/window.cpp
+        include/dali/layer.h
+        src/core/layer.cpp
+        include/dali/imgui/layer.h
+        src/imgui/layer.cpp
+        include/dali/platform/opengl/imgui.h
+        src/platform/opengl/imgui.cpp)
 
 target_include_directories(dali PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -56,3 +67,26 @@ target_link_libraries(dali PUBLIC glfw)
 # --------------- spdlog ---------------
 add_subdirectory(vendor/spdlog)
 target_link_libraries(dali PUBLIC spdlog::spdlog)
+
+# --------------- imgui ---------------
+set(IMGUI_DIR "${VENDOR_DIR}/imgui")
+add_library(imgui STATIC
+        ${IMGUI_DIR}/imconfig.h
+        ${IMGUI_DIR}/imgui.cpp
+        ${IMGUI_DIR}/imgui.h
+        ${IMGUI_DIR}/imgui_demo.cpp
+        ${IMGUI_DIR}/imgui_draw.cpp
+        ${IMGUI_DIR}/imgui_internal.h
+        ${IMGUI_DIR}/imgui_widgets.cpp
+        ${IMGUI_DIR}/imstb_rectpack.h
+        ${IMGUI_DIR}/imstb_textedit.h
+        ${IMGUI_DIR}/imstb_truetype.h
+        )
+target_include_directories(imgui PUBLIC ${IMGUI_DIR})
+
+# use GLAD for opengl loader
+target_compile_definitions(imgui PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLAD)
+
+# dali: link with imgui
+target_link_libraries(dali PUBLIC imgui)
+

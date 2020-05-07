@@ -2,7 +2,7 @@
 // Created by Leo on 4/28/2020.
 //
 
-#include "window.h"
+#include <dali/platform/windows/window.h>
 
 #include <dali/common.h>
 #include <dali/core.h>
