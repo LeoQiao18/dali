@@ -7,3 +7,6 @@
 [submodule "dali\\vendor\\imgui"]
 	path = dali\\vendor\\imgui
 	url = git@github.com:ocornut/imgui.git
+[submodule "dali/vendor/glm"]
+	path = dali/vendor/glm
+	url = git@github.com:g-truc/glm.git

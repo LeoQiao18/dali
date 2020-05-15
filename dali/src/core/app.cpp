@@ -5,8 +5,10 @@
 #include <dali/app.h>
 #include <dali/common.h>
 #include <dali/event.h>
+#include <dali/input.h>
 
 #include <glad/glad.h>
+
 
 namespace dali {
 
@@ -18,6 +20,9 @@ namespace dali {
 
         m_window = std::unique_ptr<Window>(Window::create());
         m_window->set_event_callback(std::bind(&App::on_event, this, std::placeholders::_1));
+
+        m_imgui_layer = new ImGuiLayer();
+        push_overlay(m_imgui_layer);
     }
 
     App::~App() {
@@ -32,6 +37,12 @@ namespace dali {
             for (Layer *layer : m_layer_stack) {
                 layer->on_update();
             }
+
+            m_imgui_layer->begin();
+            for (Layer *layer : m_layer_stack) {
+                layer->on_imgui_render();
+            }
+            m_imgui_layer->end();
 
             m_window->on_update();
         }

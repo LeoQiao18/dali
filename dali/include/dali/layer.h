@@ -2,8 +2,8 @@
 // Created by Leo on 5/1/2020.
 //
 
-#ifndef DALI_LAYER_H
-#define DALI_LAYER_H
+#ifndef __DALI_LAYER_H
+#define __DALI_LAYER_H
 
 #include <dali/core.h>
 #include <dali/event.h>
@@ -26,6 +26,8 @@ namespace dali {
 
         virtual void on_event(Event &event) {};
 
+        virtual void on_imgui_render() {};
+
         inline const std::string &get_name() const {
             return m_name;
         }
@@ -36,6 +38,12 @@ namespace dali {
 
     /*
      * LayerStack.
+     *
+     * Order is as below:
+     *
+     * (0)layer1, (1)layer2, (2)overlay1, (3)overlay2
+     *                      ^                        ^
+     *                  new layer               new overlay
      *
      * Note: LayerStack has ownership over the Layers.
      */
@@ -91,4 +99,4 @@ namespace dali {
     };
 }
 
-#endif //DALI_LAYER_H
+#endif //__DALI_LAYER_H

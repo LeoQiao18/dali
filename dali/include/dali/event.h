@@ -2,8 +2,8 @@
 // Created by Leo on 4/27/2020.
 //
 
-#ifndef DALI_EVENT_H
-#define DALI_EVENT_H
+#ifndef __DALI_EVENT_H
+#define __DALI_EVENT_H
 
 #include <dali/event/core.h>
 #include <dali/event/app.h>
@@ -40,4 +40,4 @@ namespace dali {
     };
 
 }
-#endif //DALI_EVENT_H
+#endif //__DALI_EVENT_H

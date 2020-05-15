@@ -2,10 +2,11 @@
 // Created by Leo on 4/27/2020.
 //
 
-#ifndef DALI_MOUSE_H
-#define DALI_MOUSE_H
+#ifndef __DALI_EVENT_MOUSE_H
+#define __DALI_EVENT_MOUSE_H
 
 #include <dali/event/core.h>
+#include <dali/input.h>
 
 #include <sstream>
 
@@ -73,22 +74,22 @@ namespace dali {
      */
     class MouseButtonEvent : public Event {
     public:
-        inline int get_mouse_button() const {
+        inline MouseCode get_mouse_button() const {
             return m_button;
         }
 
         EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
     protected:
-        MouseButtonEvent(int button)
+        MouseButtonEvent(MouseCode button)
                 : m_button(button) {}
 
-        int m_button;
+        MouseCode m_button;
     };
 
     class MouseButtonPressedEvent : public MouseButtonEvent {
     public:
-        MouseButtonPressedEvent(int button)
+        MouseButtonPressedEvent(MouseCode button)
                 : MouseButtonEvent(button) {}
 
         std::string to_string() const override {
@@ -102,7 +103,7 @@ namespace dali {
 
     class MouseButtonReleasedEvent : public MouseButtonEvent {
     public:
-        MouseButtonReleasedEvent(int button)
+        MouseButtonReleasedEvent(MouseCode button)
                 : MouseButtonEvent(button) {}
 
         std::string to_string() const override {
@@ -116,4 +117,4 @@ namespace dali {
 
 }
 
-#endif //DALI_MOUSE_H
+#endif //__DALI_EVENT_MOUSE_H

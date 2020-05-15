@@ -2,14 +2,15 @@
 // Created by Leo on 4/23/2020.
 //
 
-#ifndef DALI_APP_H
-#define DALI_APP_H
+#ifndef __DALI_APP_H
+#define __DALI_APP_H
 
 #include <dali/core.h>
 #include <dali/common.h>
 #include <dali/window.h>
 #include <dali/event.h>
 #include <dali/layer.h>
+#include <dali/imgui/layer.h>
 
 namespace dali {
 
@@ -39,6 +40,7 @@ namespace dali {
 
     private:
         std::unique_ptr<Window> m_window;
+        ImGuiLayer *m_imgui_layer;
         LayerStack m_layer_stack;
         bool m_running = true;
 
@@ -51,4 +53,4 @@ namespace dali {
 
 }
 
-#endif //DALI_APP_H
+#endif //__DALI_APP_H

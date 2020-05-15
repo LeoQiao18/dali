@@ -4,8 +4,8 @@
 // This is a blocking event system.
 //
 
-#ifndef DALI_EVENT_CORE_H
-#define DALI_EVENT_CORE_H
+#ifndef __DALI_EVENT_CORE_H
+#define __DALI_EVENT_CORE_H
 
 #include <dali/core.h>
 
@@ -79,4 +79,4 @@ namespace dali {
 
 }
 
-#endif //DALI_EVENT_CORE_H
+#endif //__DALI_EVENT_CORE_H

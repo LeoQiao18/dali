@@ -2,8 +2,8 @@
 // Created by Leo on 4/24/2020.
 //
 
-#ifndef DALI_LOG_H
-#define DALI_LOG_H
+#ifndef __DALI_LOG_H
+#define __DALI_LOG_H
 
 #include <dali/core.h>
 #include <dali/common.h>
@@ -45,4 +45,4 @@ namespace dali {
 #define DALI_ERROR(...) ::dali::Log::get_client_logger()->error(__VA_ARGS__)
 #define DALI_CRITICAL(...) ::dali::Log::get_client_logger()->critical(__VA_ARGS__)
 
-#endif //DALI_LOG_H
+#endif //__DALI_LOG_H

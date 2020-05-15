@@ -2,8 +2,8 @@
 // Created by Leo on 4/28/2020.
 //
 
-#ifndef DALI_PLATFORM_WINDOWS_WINDOW_H
-#define DALI_PLATFORM_WINDOWS_WINDOW_H
+#ifndef __DALI_PLATFORM_WINDOWS_WINDOW_H
+#define __DALI_PLATFORM_WINDOWS_WINDOW_H
 
 #include <dali/window.h>
 
@@ -35,6 +35,10 @@ namespace dali {
 
         virtual bool is_vsync() const override;
 
+        virtual void *get_native_window() const override {
+            return (void *) m_window;
+        };
+
     private:
         virtual void init(const WindowProps &props);
 
@@ -56,4 +60,4 @@ namespace dali {
     };
 }
 
-#endif //DALI_PLATFORM_WINDOWS_WINDOW_H
+#endif //__DALI_PLATFORM_WINDOWS_WINDOW_H

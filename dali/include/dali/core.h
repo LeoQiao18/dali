@@ -2,8 +2,8 @@
 // Created by Leo on 4/23/2020.
 //
 
-#ifndef DALI_CORE_H
-#define DALI_CORE_H
+#ifndef __DALI_CORE_H
+#define __DALI_CORE_H
 
 //#include <dali_export.h>
 
@@ -45,4 +45,4 @@
 /* helpers */
 #define BIT(pos) (1 << pos)
 
-#endif //DALI_CORE_H
+#endif //__DALI_CORE_H
