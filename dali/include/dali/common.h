@@ -2,8 +2,10 @@
 // Created by Leo on 4/28/2020.
 //
 
-#ifndef DALI_COMMON_H
-#define DALI_COMMON_H
+#ifndef __DALI_COMMON_H
+#define __DALI_COMMON_H
+
+#include <stdint.h>
 
 #include <iostream>
 #include <memory>
@@ -24,4 +26,4 @@
 #include <Windows.h>
 #endif
 
-#endif //DALI_COMMON_H
+#endif //__DALI_COMMON_H

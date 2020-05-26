@@ -2,8 +2,8 @@
 // Created by Leo on 4/24/2020.
 //
 
-#ifndef DALI_ENTRYPOINT_H
-#define DALI_ENTRYPOINT_H
+#ifndef __DALI_ENTRYPOINT_H
+#define __DALI_ENTRYPOINT_H
 
 #include <dali/app.h>
 #include <dali/common.h>
@@ -19,4 +19,4 @@ int main(int argc, char **argv) {
     delete app;
 }
 
-#endif //DALI_ENTRYPOINT_H
+#endif //__DALI_ENTRYPOINT_H

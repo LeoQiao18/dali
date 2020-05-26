@@ -2,10 +2,11 @@
 // Created by Leo on 4/27/2020.
 //
 
-#ifndef DALI_KEY_H
-#define DALI_KEY_H
+#ifndef __DALI_EVENT_KEY_H
+#define __DALI_EVENT_KEY_H
 
 #include <dali/event/core.h>
+#include <dali/input.h>
 
 #include <sstream>
 
@@ -14,32 +15,32 @@ namespace dali {
      * All key events should be derived from this class.
      * This class should not be instantiated, because it has a protected constructor.
      */
-    class DALI_API KeyEvent : public Event {
+    class KeyEvent : public Event {
     public:
-        inline int get_key_code() const {
+        KeyCode get_key_code() const {
             return m_key_code;
         }
 
         EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 
     protected:
-        KeyEvent(int key_code)
+        KeyEvent(KeyCode key_code)
                 : m_key_code(key_code) {
         }
 
-        int m_key_code;
+        KeyCode m_key_code;
     };
 
     /*
      * KeyPressedEvent takes into account of key repeats.
      */
-    class DALI_API KeyPressedEvent : public KeyEvent {
+    class KeyPressedEvent : public KeyEvent {
     public:
-        KeyPressedEvent(int key_code, int nrepeat)
+        KeyPressedEvent(KeyCode key_code, int nrepeat)
                 : KeyEvent(key_code), m_nrepeat(nrepeat) {
         }
 
-        inline int get_nrepeat() const {
+        int get_nrepeat() const {
             return m_nrepeat;
         }
 
@@ -57,7 +58,7 @@ namespace dali {
 
     class KeyReleasedEvent : public KeyEvent {
     public:
-        KeyReleasedEvent(int key_code)
+        KeyReleasedEvent(KeyCode key_code)
                 : KeyEvent(key_code) {
         }
 
@@ -72,7 +73,7 @@ namespace dali {
 
     class KeyTypedEvent : public KeyEvent {
     public:
-        KeyTypedEvent(int key_code)
+        KeyTypedEvent(KeyCode key_code)
                 : KeyEvent(key_code) {
         }
 
@@ -86,4 +87,4 @@ namespace dali {
     };
 }
 
-#endif //DALI_KEY_H
+#endif //__DALI_EVENT_KEY_H

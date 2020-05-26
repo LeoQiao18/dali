@@ -2,8 +2,8 @@
 // Created by Leo on 4/28/2020.
 //
 
-#ifndef DALI_WINDOW_H
-#define DALI_WINDOW_H
+#ifndef __DALI_WINDOW_H
+#define __DALI_WINDOW_H
 
 #include <dali/common.h>
 #include <dali/core.h>
@@ -40,8 +40,10 @@ namespace dali {
 
         virtual bool is_vsync() const = 0;
 
+        virtual void *get_native_window() const = 0;
+
         static Window *create(const WindowProps &props = WindowProps());
     };
 }
 
-#endif //DALI_WINDOW_H
+#endif //__DALI_WINDOW_H
