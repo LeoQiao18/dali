@@ -15,9 +15,9 @@ namespace dali {
      * All key events should be derived from this class.
      * This class should not be instantiated, because it has a protected constructor.
      */
-    class DALI_API KeyEvent : public Event {
+    class KeyEvent : public Event {
     public:
-        inline KeyCode get_key_code() const {
+        KeyCode get_key_code() const {
             return m_key_code;
         }
 
@@ -34,13 +34,13 @@ namespace dali {
     /*
      * KeyPressedEvent takes into account of key repeats.
      */
-    class DALI_API KeyPressedEvent : public KeyEvent {
+    class KeyPressedEvent : public KeyEvent {
     public:
         KeyPressedEvent(KeyCode key_code, int nrepeat)
                 : KeyEvent(key_code), m_nrepeat(nrepeat) {
         }
 
-        inline int get_nrepeat() const {
+        int get_nrepeat() const {
             return m_nrepeat;
         }
 

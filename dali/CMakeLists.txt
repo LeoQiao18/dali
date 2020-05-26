@@ -8,7 +8,7 @@ set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(VENDOR_DIR    "${CMAKE_CURRENT_SOURCE_DIR}/vendor")
 
 # ==================== Dali ====================
-add_library(dali SHARED
+add_library(dali STATIC
         include/dali/app.h
         include/dali/common.h
         include/dali/core.h
@@ -30,12 +30,17 @@ add_library(dali SHARED
         src/core/layer.cpp
         include/dali/imgui/layer.h
         src/imgui/layer.cpp
-        include/dali/input.h include/dali/platform/windows/input.h src/platform/windows/input.cpp include/dali/key_code.h include/dali/mouse_code.h src/imgui/build.cpp)
+        include/dali/input.h
+        include/dali/platform/windows/input.h
+        src/platform/windows/input.cpp
+        include/dali/key_code.h
+        include/dali/mouse_code.h
+        src/imgui/build.cpp include/dali/renderer/context.h src/platform/opengl/context.cpp include/dali/platform/opengl/context.h include/dali/renderer/shader.h src/renderer/shader.cpp include/dali/renderer/renderer.h src/renderer/renderer.cpp include/dali/renderer/buffer.h src/renderer/buffer.cpp include/dali/platform/opengl/buffer.h src/platform/opengl/buffer.cpp)
 
 target_include_directories(dali PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # --------------- Dali compilation configurations ---------------
-target_compile_definitions(dali PRIVATE DALI_BUILD_DLL)
+#target_compile_definitions(dali PRIVATE DALI_BUILD_DLL)
 if (WIN32)
     target_compile_definitions(dali PRIVATE DALI_PLATFORM_WINDOWS)
 endif (WIN32)

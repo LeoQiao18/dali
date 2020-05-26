@@ -5,6 +5,8 @@
 #ifndef __DALI_LOG_H
 #define __DALI_LOG_H
 
+#define SPDLOG_WCHAR_TO_UTF8_SUPPORT
+
 #include <dali/core.h>
 #include <dali/common.h>
 
@@ -12,15 +14,15 @@
 #include <spdlog/fmt/ostr.h>
 
 namespace dali {
-    class DALI_API Log {
+    class Log {
     public:
         static void init();
 
-        inline static std::shared_ptr<spdlog::logger> &get_core_logger() {
+        static std::shared_ptr<spdlog::logger> &get_core_logger() {
             return s_core_logger;
         }
 
-        inline static std::shared_ptr<spdlog::logger> &get_client_logger() {
+        static std::shared_ptr<spdlog::logger> &get_client_logger() {
             return s_client_logger;
         }
 

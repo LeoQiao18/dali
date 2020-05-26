@@ -5,16 +5,10 @@
 #ifndef __DALI_CORE_H
 #define __DALI_CORE_H
 
-//#include <dali_export.h>
+#include <dali/log.h>
 
 #ifdef DALI_PLATFORM_WINDOWS
-
-#ifdef DALI_BUILD_DLL
-#define DALI_API __declspec(dllexport)
-#else //DALI_BUILD_DLL
-#define DALI_API __declspec(dllimport)
-#endif //DALI_BUILD_DLL
-
+// windows
 #else //DALI_PLATFORM_WINDOWS
 #error Dali only supports Windows.
 #endif //DALI_PLATFORM_WINDOWS

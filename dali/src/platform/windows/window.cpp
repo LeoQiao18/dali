@@ -2,13 +2,14 @@
 // Created by Leo on 4/28/2020.
 //
 
-#include <dali/platform/windows/window.h>
-
 #include <dali/common.h>
 #include <dali/core.h>
 #include <dali/event.h>
 
-#include <glad/glad.h>
+#include <dali/platform/windows/window.h>
+#include <dali/platform/opengl/context.h>
+
+#include <GLFW/glfw3.h>
 
 namespace dali {
 
@@ -16,10 +17,6 @@ namespace dali {
 
     static void on_glfw_error(int error, const char *description) {
         DALI_CORE_ERROR("GLFW error ({0}): {1}", error, description);
-    }
-
-    Window *Window::create(const WindowProps &props) {
-        return new WindowsWindow(props);
     }
 
     WindowsWindow::WindowsWindow(const WindowProps &props) {
@@ -32,7 +29,7 @@ namespace dali {
 
     void WindowsWindow::on_update() {
         glfwPollEvents();
-        glfwSwapBuffers(m_window);
+        m_context->swap_buffers();
     }
 
 
@@ -64,9 +61,9 @@ namespace dali {
         }
 
         m_window = glfwCreateWindow(props.width, props.height, m_data.title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(m_window);
-        int status = gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
-        DALI_CORE_ASSERT(status, "Failed to initialize");
+        m_context = new OpenGLContext(m_window);
+        m_context->init();
+
         glfwSetWindowUserPointer(m_window, &m_data);
         set_vsync(true);
 

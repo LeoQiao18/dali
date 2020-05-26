@@ -4,6 +4,8 @@
 #include <dali/dali.h>
 #include <dali/entrypoint.h>
 
+#include <imgui.h>
+
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
 #include <glm/mat4x4.hpp> // glm::mat4
@@ -22,17 +24,25 @@ class ExampleLayer : public dali::Layer {
 public:
     ExampleLayer()
             : Layer("Example") {
+        auto cam = camera(5.0f, {0.5f, 0.5f});
+        DALI_INFO("{0}", cam.length());
     }
 
     void on_update() override {
 //        DALI_INFO("ExampleLayer: update");
         if (dali::Input::is_key_pressed(DALI_KEY_TAB)) {
-            DALI_INFO("Tab is pressed");
+                DALI_INFO("Tab is pressed 😊");
         }
     }
 
     void on_event(dali::Event &event) override {
 //        DALI_TRACE("{}", event);
+    }
+
+    void on_imgui_render() {
+        ImGui::Begin("Test");
+        ImGui::Text("Hello World");
+        ImGui::End();
     }
 };
 

@@ -17,25 +17,25 @@ namespace dali {
      * This is a singleton class. This class should be accessed by the static methods, which internally calls the
      * virtual methods that should be inherited by platform-specific Input classes.
      */
-    class DALI_API Input {
+    class Input {
     public:
-        static inline bool is_key_pressed(KeyCode key) {
+        static bool is_key_pressed(KeyCode key) {
             return s_instance->_is_key_pressed(key);
         }
 
-        static inline bool is_mouse_button_pressed(MouseCode button) {
+        static bool is_mouse_button_pressed(MouseCode button) {
             return s_instance->_is_mouse_button_pressed(button);
         }
 
-        static inline std::pair<float, float> get_mouse_position() {
+        static std::pair<float, float> get_mouse_position() {
             return s_instance->_get_mouse_position();
         }
 
-        static inline float get_mouse_x() {
+        static float get_mouse_x() {
             return s_instance->_get_mouse_x();
         }
 
-        static inline float get_mouse_y() {
+        static float get_mouse_y() {
             return s_instance->_get_mouse_y();
         }
 

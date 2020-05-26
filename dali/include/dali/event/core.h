@@ -40,7 +40,7 @@ namespace dali {
     /*
      * Abstract base class for all events.
      */
-    class DALI_API Event {
+    class Event {
         friend class EventDispatcher;
 
     public:
@@ -56,7 +56,7 @@ namespace dali {
             return get_name();
         }
 
-        inline bool is_in_category(EventCategory category) {
+        bool is_in_category(EventCategory category) {
             return get_categories() & category;
         }
     };

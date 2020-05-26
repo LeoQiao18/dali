@@ -12,9 +12,12 @@
 #include <dali/layer.h>
 #include <dali/imgui/layer.h>
 
+#include <dali/renderer/shader.h>
+#include <dali/renderer/buffer.h>
+
 namespace dali {
 
-    class DALI_API App {
+    class App {
     public:
         App();
 
@@ -30,11 +33,11 @@ namespace dali {
 
         void push_overlay(Layer *layer);
 
-        inline Window &get_window() {
+        Window &get_window() {
             return *m_window;
         }
 
-        inline static App &get() {
+        static App &get() {
             return *s_instance;
         }
 
@@ -43,6 +46,13 @@ namespace dali {
         ImGuiLayer *m_imgui_layer;
         LayerStack m_layer_stack;
         bool m_running = true;
+
+        /* OpenGL first triangle */
+        unsigned int m_vertex_array;
+
+        std::unique_ptr<Shader> m_shader;
+        std::unique_ptr<VertexBuffer> m_vbo;
+        std::unique_ptr<IndexBuffer> m_ibo;
 
     private:
         static App *s_instance;

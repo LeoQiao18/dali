@@ -9,7 +9,7 @@
 #include <dali/event.h>
 
 namespace dali {
-    class DALI_API ImGuiLayer : public Layer {
+    class ImGuiLayer : public Layer {
     public:
         ImGuiLayer();
         ~ImGuiLayer();

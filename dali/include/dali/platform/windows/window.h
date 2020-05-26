@@ -6,9 +6,9 @@
 #define __DALI_PLATFORM_WINDOWS_WINDOW_H
 
 #include <dali/window.h>
+#include <dali/renderer/context.h>
 
-#include <GLFW/glfw3.h>
-
+struct GLFWwindow;
 
 namespace dali {
     class WindowsWindow : public Window {
@@ -46,6 +46,7 @@ namespace dali {
 
     private:
         GLFWwindow *m_window;
+        GraphicsContext *m_context;
 
         struct WindowData {
             std::string title;

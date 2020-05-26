@@ -12,7 +12,7 @@ namespace dali {
     /*
      * Layer.
      */
-    class DALI_API Layer {
+    class Layer {
     public:
         Layer(const std::string &name = "Layer");
 
@@ -28,7 +28,7 @@ namespace dali {
 
         virtual void on_imgui_render() {};
 
-        inline const std::string &get_name() const {
+        const std::string &get_name() const {
             return m_name;
         }
 
@@ -47,7 +47,7 @@ namespace dali {
      *
      * Note: LayerStack has ownership over the Layers.
      */
-    class DALI_API LayerStack {
+    class LayerStack {
     public:
         LayerStack() = default;
 

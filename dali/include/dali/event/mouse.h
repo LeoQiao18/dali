@@ -17,15 +17,15 @@ namespace dali {
                 : m_x(x), m_y(y) {
         }
 
-        inline float get_x() const {
+        float get_x() const {
             return m_x;
         }
 
-        inline float get_y() const {
+        float get_y() const {
             return m_y;
         }
 
-        inline std::string to_string() const override {
+        std::string to_string() const override {
             std::stringstream ss;
             ss << "MouseMovedEvent: " << m_x << " ," << m_y;
             return ss.str();
@@ -46,15 +46,15 @@ namespace dali {
                 : m_x_offset(x_offset), m_y_offset(y_offset) {
         }
 
-        inline float get_x_offset() const {
+        float get_x_offset() const {
             return m_x_offset;
         }
 
-        inline float get_y_offset() const {
+        float get_y_offset() const {
             return m_y_offset;
         }
 
-        inline std::string to_string() const override {
+        std::string to_string() const override {
             std::stringstream ss;
             ss << "MouseScrolledEvent: " << get_x_offset() << ", " << get_y_offset();
             return ss.str();
@@ -74,7 +74,7 @@ namespace dali {
      */
     class MouseButtonEvent : public Event {
     public:
-        inline MouseCode get_mouse_button() const {
+        MouseCode get_mouse_button() const {
             return m_button;
         }
 
